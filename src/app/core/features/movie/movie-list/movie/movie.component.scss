@@ -1,0 +1,33 @@
+@import '../../../../../shared/styles/colors';
+@import '../../../../../shared/styles/variable';
+
+:host {
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  color: $white;
+  word-break: normal;
+  @media screen and (max-width: $tablet-width) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.movie {
+  &-image {
+    margin-right: 1rem;
+  }
+  &-description {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    @media screen and (max-width: $tablet-width) {
+      max-width: 250px;
+    }
+  }
+}

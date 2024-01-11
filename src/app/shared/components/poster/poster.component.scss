@@ -1,0 +1,21 @@
+:host {
+  width: 170px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: normal;
+  overflow: hidden;
+}
+
+.open {
+  max-height: 1600px;
+  transition: all 0.5s linear;
+}
+
+.close {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s linear;
+}

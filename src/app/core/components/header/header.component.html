@@ -1,0 +1,10 @@
+<header class="header">
+  <a class="header-link" href="/">
+    <title class="header-title">{{ 'header.title' | translate }}</title>
+  </a>
+  <app-button
+    [buttonText]="'header.language' | translate"
+    [icon]="'assets/static/translate.svg'"
+    (click)="changeLanguage()"
+  ></app-button>
+</header>

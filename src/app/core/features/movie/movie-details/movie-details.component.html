@@ -1,0 +1,42 @@
+<div class="movie-buttons">
+  <app-button
+    [buttonText]="'movieDetails.back' | translate"
+    [icon]="'assets/static/arrow.svg'"
+    (click)="back()">
+  </app-button>
+  <app-button
+          *ngIf="lastSeen.length"
+    [buttonText]="'movieDetails.lastMovie' | translate"
+    [icon]="'assets/static/arrow.svg'"
+    [iconPosition]="iconPosition"
+    (click)="changeRotation()"
+  >
+  </app-button>
+</div>
+<ul class="movie-lastSeen {{iconPosition}}">
+  <li *ngFor="let poster of lastSeen">
+    <app-poster
+            class="movie-lastSeen-image"
+            [showPoster]="iconPosition"
+            [poster]="poster"
+    ></app-poster>
+  </li>
+</ul>
+<app-poster
+        class="movie-image"
+  [poster]="movieDetails.Poster"
+  [title]="movieDetails.Title"
+></app-poster>
+<div class="movie-details">
+  <span class="movie-span" *ngFor="let details of movieDetails | printJsonPretty">
+    <ng-container *ngIf="(details.value | checkType) === 'object' else string">
+      {{details.key}}:
+      <ng-container *ngFor="let detail of details.value">
+        <br> {{detail.Source}} - {{detail.Value}}
+      </ng-container>
+    </ng-container>
+    <ng-template #string>
+      {{details.key}}: {{details.value}}
+    </ng-template>
+  </span>
+</div>

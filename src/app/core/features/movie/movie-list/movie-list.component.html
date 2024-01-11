@@ -1,0 +1,10 @@
+<section class="movies">
+    <ul class="movies-list">
+        <li class="movies-list-item" *ngFor="let movie of movieList?.Search; trackBy: identify">
+            <a class="movies-list-item-link" [routerLink]="['movie',movie.imdbID]">
+                <app-movie [movie]="movie"></app-movie>
+            </a>
+        </li>
+    </ul>
+    <app-pagination *ngIf="movieList?.Search" [currentPage]="currentPage" [pages]="pages" />
+</section>

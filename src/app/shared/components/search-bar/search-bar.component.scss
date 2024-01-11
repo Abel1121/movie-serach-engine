@@ -1,0 +1,50 @@
+@import '../../../shared/styles/colors';
+
+:host {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.form{
+  width: 100%;
+
+  &-title {
+    text-align: center;
+  }
+
+  &-input {
+    display: flex;
+    padding: 1rem 1.5rem;
+    align-items: flex-start;
+    gap: 0.625rem;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 0.75rem;
+    background-color: $black2;
+    border: 3px solid $black2;
+    color: $white2;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:active {
+      outline: none !important;
+      border: 3px solid $white2;
+    }
+
+    &:hover {
+      background-color: $black3;
+    }
+  }
+  &-container{
+    position: relative;
+  }
+  &-icon {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 2rem;
+    cursor: pointer;
+  }
+}

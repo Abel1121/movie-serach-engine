@@ -1,0 +1,41 @@
+@import '../../../shared/styles/colors';
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  &-input {
+    width: 2.5rem;
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #1A1A1A;
+    border: 3px solid #1A1A1A;
+    color: $white;
+    box-sizing: border-box;
+
+  }
+  &-currentPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    width: 2rem;
+    height: 2rem;
+    background-color: #1A1A1A;
+  }
+
+  &-item {
+    cursor: pointer;
+  }
+  margin: 0 0.5rem;
+}

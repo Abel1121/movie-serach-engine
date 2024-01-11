@@ -1,0 +1,45 @@
+<app-button
+        [disabled]="currentPage === 1"
+        [buttonText]="'pagination.back' | translate"
+        [icon]="'assets/static/arrow.svg'"
+        (click)="goToPage(currentPage - 1)"
+>
+</app-button>
+<ul class="pagination-list">
+    <li [ngClass]="{'pagination-list-currentPage':  currentPage === 1}" (click)="goToPage(1)" class="pagination-list-item">1</li>
+    <ng-container *ngIf="!showInput && (currentPage <= 3 || currentPage === pages)">
+        <li *ngIf="pages >= 2" [ngClass]="{'pagination-list-currentPage':  currentPage === 2}" (click)="goToPage(2)" class="pagination-list-item">2</li>
+        <li *ngIf="pages >= 3" [ngClass]="{'pagination-list-currentPage':  currentPage === 3}" (click)="goToPage(3)" class="pagination-list-item">3</li>
+        <li *ngIf="pages >= 5" (click)="showInputFunc('left')" class="pagination-list-item">...</li>
+    </ng-container>
+    <ng-container *ngIf="showInput && left">
+        <li *ngIf="showInput" class="pagination-list-item">
+            <form [formGroup]="pageForm" (ngSubmit)="goToPage($event.value)">
+                <input formControlName="page" #pageInput (blur)="onBlur()" class="pagination-list-input"/>
+            </form>
+
+        </li>
+    </ng-container>
+    <ng-container *ngIf="currentPage !== pages && currentPage > 3">
+        <li *ngIf="!left && !showInput" (click)="showInputFunc('left')" class="pagination-list-item">...</li>
+        <li class="pagination-list-item pagination-list-currentPage">{{currentPage}}</li>
+        <li *ngIf="!showInput && !left" (click)="showInputFunc('right')" class="pagination-list-item">...</li>
+    </ng-container>
+    <ng-container *ngIf="showInput && !left">
+        <form [formGroup]="pageForm" (ngSubmit)="goToPage($event.value)">
+            <li *ngIf="showInput" class="pagination-list-item">
+                <input formControlName="page" #pageInput (blur)="onBlur()" class="pagination-list-input"/>
+            </li>
+        </form>
+    </ng-container>
+    <li *ngIf="pages >= 5" [ngClass]="{'pagination-list-currentPage':  currentPage === pages}" (click)="goToPage(pages)" class="pagination-list-item">{{pages}}</li>
+</ul>
+<app-button
+        [disabled]="currentPage === pages"
+        [buttonText]="'pagination.next' | translate"
+        [icon]="'assets/static/arrow.svg'"
+        [iconPosition]="'right'"
+        [class]="'reverse'"
+        (click)="goToPage(currentPage + 1)"
+>
+</app-button>

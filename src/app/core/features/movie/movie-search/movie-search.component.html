@@ -1,0 +1,34 @@
+<form class="move-search" [formGroup]="formModel.formGroup" (ngSubmit)="onSave()">
+  <app-search-bar
+    class="search-bar"
+    [title]="'searchBar.title' | translate"
+    [formGroup]="formModel.formGroup"
+    [controlName]="formModel.TITLE"
+    [placeholder]="'searchBar.placeholder' | translate"
+    [icon]="'assets/static/settings.svg'"
+    [altIcon]="'settings'"
+    (newItemEvent)="openSettingsFunc($event)"
+  ></app-search-bar>
+    <div class="movie-settings" [ngClass]=" openSettings ? 'open' : 'close'">
+      <img class="movie-settings-arrow" src="assets/static/arrow.svg">
+      <select class="search-select"
+              [formGroup]="formModel.formGroup"
+              formControlName="{{formModel.TYPE}}"
+              >
+        <option></option>
+        <option *ngFor="let enum of movieTypeEnum | keyvalue" value="{{enum.value}}">{{("searchBar.") + enum.value | translate}}</option>
+      </select>
+      <app-search-bar
+              class="search-bar"
+              [placeholder]="'searchBar.year' | translate"
+              [formGroup]="formModel.formGroup"
+              [controlName]="formModel.YEAR"
+      ></app-search-bar>
+    </div>
+  <app-button
+    class="pink"
+    [disabled]="!formModel.formGroup.valid"
+    [buttonText]="'searchBar.search' | translate"
+    (click)="onSave()"
+  ></app-button>
+</form>

@@ -1,0 +1,16 @@
+<form class="form" [formGroup]="formGroup">
+  <h1 *ngIf="title" class="form-title">{{title}}</h1>
+  <label for="search"></label>
+  <div class="form-container">
+    <input
+      id="search"
+      formControlName="{{controlName}}"
+      name="movie-search"
+      class="form-input {{inputClass}}"
+      placeholder="{{placeholder}}"
+    >
+    <i *ngIf="icon" >
+      <img (click)="clickIcon('click')" class="form-icon {{icon}}" src="{{icon}}" alt="{{altIcon}}">
+    </i>
+  </div>
+</form>

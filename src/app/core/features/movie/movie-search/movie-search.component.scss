@@ -1,0 +1,59 @@
+@import '../../../../shared/styles/colors';
+@import '../../../../shared/styles/variable';
+
+:host {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 75%;
+  margin: auto;
+  transition: all 0.3s linear;
+  @media screen and (max-width: $tablet-width) {
+    width: 90%;
+  }
+}
+.movie {
+  &-settings {
+    max-height: 0;
+    transition: all 0.5s linear;
+    overflow: hidden;
+    position: relative;
+
+    &-arrow {
+      position: absolute;
+      transform: rotate(-90deg);
+      z-index: 1;
+      width: 3rem;
+      right: 1rem;
+      top: 0.4rem
+    }
+  }
+}
+.search {
+  &-select {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    align-items: flex-start;
+    border-radius: 0.75rem;
+    background-color: #1A1A1A;
+    border: 3px solid #1A1A1A;
+    color: $white2;
+    margin-bottom: 1rem;
+    appearance:none;
+    cursor: pointer;
+
+  }
+}
+
+.open {
+  max-height: 9rem;
+  transition: all 0.5s linear;
+
+}
+.close {
+  max-height: 0;
+  transition: all 0.5s linear;
+}

@@ -1,0 +1,46 @@
+@import '../../../../shared/styles/colors';
+@import '../../../../shared/styles/variable';
+
+:host {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 75%;
+  margin: 3rem auto;
+  flex-wrap:wrap;
+  @media screen and (max-width: $tablet-width) {
+    width: 90%;
+  }
+}
+
+.movies {
+  width: 100%;
+  &-list {
+    padding: 0;
+
+    &-item {
+      position: relative;
+      list-style-type: none;
+      margin-bottom: 1rem;
+      background-color: $black2;
+      transition: all 0.3s linear;
+      bottom: 0;
+      right: 0;
+      cursor: pointer;
+
+      &-link {
+        text-decoration: none;
+      }
+
+      &:hover {
+        bottom: 0.75rem;
+        right: 0.33rem;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

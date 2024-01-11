@@ -1,0 +1,56 @@
+@import '../../styles/colors';
+
+.button {
+  border-radius: 1.5rem;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  background-color: $black2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: $white;
+  gap: 0.5rem;
+  cursor: pointer;
+  transform: rotate(0);
+  transition: all 0.5s linear;
+
+  & .open {
+    transform: rotate(90deg);
+    transition: all 0.5s linear;
+  }
+
+  & .close {
+    transform: rotate(270deg);
+    transition: all 0.5s linear;
+  }
+
+  & .right {
+    transform: rotate(180deg);
+  }
+
+  &-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  &:disabled {
+    color: $white2;
+    cursor: not-allowed;
+  }
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+.pink {
+  background-color: $purple;
+  border-radius: 0.75rem;
+  border: none;
+  color: $white;
+  padding: 1rem 1.25rem 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+
+  button {
+    background: none;
+  }
+}

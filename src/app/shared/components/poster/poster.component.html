@@ -1,0 +1,8 @@
+<ng-container *ngIf="poster !== 'N/A' else noPoster">
+    <img class="movie-image {{showPoster}}" ngSrc="{{poster}}" alt="{{title}} poster" width="170" height="250"/>
+</ng-container>
+<ng-template #noPoster>
+    <span class="{{showPoster}}">
+        {{'poster.noPoster' | translate}}
+    </span>
+</ng-template>
