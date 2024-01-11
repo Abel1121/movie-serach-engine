@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieSearchFormModel } from './movie-search-form.form-model';
 import { ActivatedRoute, Router } from '@angular/router';
-import {
-  movieTypeEnum,
-  movieTypeLabels,
-} from '../../../../shared/enum/movie-type';
+import { movieTypeEnum } from '../../../../shared/enum/movie-type';
 
 @Component({
   selector: 'app-movie-search',
@@ -16,14 +13,12 @@ export class MovieSearchComponent implements OnInit {
   formModel = new MovieSearchFormModel();
   openSettings = false;
   movieTypeEnum = movieTypeEnum;
-  movieTypeLabels = movieTypeLabels;
   constructor(private router: Router, private route: ActivatedRoute) {}
   ngOnInit() {
     this.formModel = new MovieSearchFormModel(this.route.snapshot?.queryParams);
   }
 
   onSave() {
-    console.log(this.formModel.formGroup.value);
     const form = this.filterForm(this.formModel.formGroup.value);
     this.router.navigate([], {
       relativeTo: this.route,

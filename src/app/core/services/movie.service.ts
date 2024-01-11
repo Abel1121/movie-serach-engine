@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { servicesUrls } from '../../../environments/environments';
+import { environment } from '../../../environments/environments';
 import { movieList } from '../../shared/models/movieList';
 import { Observable, Subject } from 'rxjs';
 import { movieDetails } from '../../shared/models/movieDetails';
@@ -19,11 +19,11 @@ export class MovieService {
     if (param['year']) params = params.set('y', param['year']);
     if (param['type']) params = params.set('type', param['type']);
     if (param['page']) params = params.set('page', param['page']);
-    return this.http.get<movieList>(servicesUrls.OMDAPI, { params });
+    return this.http.get<movieList>(environment.OMDAPI, { params });
   }
 
   getMovieDetails(imdbId: string): Observable<movieDetails> {
     const params = new HttpParams().set('i', `${imdbId}`);
-    return this.http.get<movieDetails>(servicesUrls.OMDAPI, { params });
+    return this.http.get<movieDetails>(environment.OMDAPI, { params });
   }
 }
