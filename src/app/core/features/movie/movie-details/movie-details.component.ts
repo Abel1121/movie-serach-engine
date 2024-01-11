@@ -29,7 +29,6 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
       this.movieDetails = movieDetails['movieDetails'];
     });
     this.lastSeen = this.movieService.lastSeen;
-    console.log(this.movieDetails.Poster !== 'N/A');
   }
   ngOnDestroy() {
     this.movieService.lastSeen.push(this.movieDetails.Poster);
