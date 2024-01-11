@@ -1,5 +1,5 @@
 import { ResolveFn } from '@angular/router';
-import { inject, Inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { MovieService } from '../../../services/movie.service';
 import { movieList } from '../../../../shared/models/movieList';
 import { Observable } from 'rxjs';

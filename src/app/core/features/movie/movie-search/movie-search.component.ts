@@ -34,7 +34,7 @@ export class MovieSearchComponent implements OnInit {
     });
   }
 
-  openSettingsFunc($event: string) {
+  openSettingsFunc() {
     this.openSettings = !this.openSettings;
   }
   filterForm(obj: any) {

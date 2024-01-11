@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { servicesUrls, TOKEN } from '../../../environments/environments';
+import { servicesUrls } from '../../../environments/environments';
 import { movieList } from '../../shared/models/movieList';
 import { Observable, Subject } from 'rxjs';
 import { movieDetails } from '../../shared/models/movieDetails';

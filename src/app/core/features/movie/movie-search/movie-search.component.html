@@ -7,16 +7,16 @@
     [placeholder]="'searchBar.placeholder' | translate"
     [icon]="'assets/static/settings.svg'"
     [altIcon]="'settings'"
-    (newItemEvent)="openSettingsFunc($event)"
+    (newItemEvent)="openSettingsFunc()"
   ></app-search-bar>
     <div class="movie-settings" [ngClass]=" openSettings ? 'open' : 'close'">
-      <img class="movie-settings-arrow" src="assets/static/arrow.svg">
+      <img class="movie-settings-arrow" src="assets/static/arrow.svg" alt="arrow">
       <select class="search-select"
               [formGroup]="formModel.formGroup"
               formControlName="{{formModel.TYPE}}"
               >
         <option></option>
-        <option *ngFor="let enum of movieTypeEnum | keyvalue" value="{{enum.value}}">{{("searchBar.") + enum.value | translate}}</option>
+        <option *ngFor="let movieEnum of movieTypeEnum | keyvalue" value="{{movieEnum.value}}">{{("searchBar.") + movieEnum.value | translate}}</option>
       </select>
       <app-search-bar
               class="search-bar"
