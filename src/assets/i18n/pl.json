@@ -1,0 +1,37 @@
+{
+  "header": {
+    "title": "Wyszukiwarka OMDb",
+    "language": "Angielski"
+  },
+  "error": {
+    "404": "Podana strona nie istnieje, za chwilę nastąpi przekierowanie",
+    "500": "Wystąpił błąd komunikacji z serwerem, spróbuj ponownie za chwilę",
+    "redirect": "Zostaniesz przeniesiony za {{seconds}} sekund"
+  },
+  "searchBar": {
+    "title": "Najnowsze filmy i produkcje - Wyszukaj swoje ulubione filmy",
+    "year": "Rok",
+    "type": "Typ",
+    "movie": "Film",
+    "episode": "Odcinek",
+    "series": "Sezon",
+    "placeholder": "Napisz tutaj czego poszukujesz",
+    "search": "Wyszukaj"
+  },
+  "movie": {
+    "type": "Typ",
+    "year": "Rok",
+    "title": "Tytuł"
+  },
+  "movieDetails": {
+    "back": "Wróć",
+    "lastMovie": "Ostatnio przeglądane"
+  },
+  "pagination": {
+    "back": "Wstecz",
+    "next": "Dalej"
+  },
+  "poster": {
+    "noPoster": "Brak Plakatu"
+  }
+}

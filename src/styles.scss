@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import './app/shared/styles/colors';
+@import './app/shared/styles/normalize';
+
+
+html {
+  background-color: $black;
+  font-size: 16px;
+  color: $white;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  height: 100%;
+}
+
+body {
+  padding: 1.75rem 2.5rem;
+  height: calc(100% - 3.5rem);
+}

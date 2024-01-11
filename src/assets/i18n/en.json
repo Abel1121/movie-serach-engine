@@ -1,0 +1,37 @@
+{
+  "header": {
+    "title": "OMDb search engine",
+    "language": "Polish"
+  },
+  "error": {
+    "404": "This page does not exist, you will be redirected soon",
+    "500": "There was an error communicating with the server, please try again in a moment",
+    "redirect": "You will be redirect in {{seconds}} seconds"
+  },
+  "searchBar": {
+    "title": "Latest Movies and Productions - Search for Your Favorite Films",
+    "year": "Year",
+    "type": "Type",
+    "movie": "Movie",
+    "episode": "Episode",
+    "series": "Series",
+    "placeholder": "Write here what you need",
+    "search": "Search"
+  },
+  "movie": {
+    "type": "Type",
+    "year": "Year",
+    "title": "Title"
+  },
+  "movieDetails": {
+    "back": "Back",
+    "lastMovie": "Last seen"
+  },
+  "pagination": {
+    "back": "Back",
+    "next": "Next"
+  },
+  "poster": {
+    "noPoster": "No Poster"
+  }
+}
