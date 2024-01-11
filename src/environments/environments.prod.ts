@@ -1,6 +1,5 @@
-export const servicesUrls = {
-  OMDAPI: 'http://omdbapi.com',
-};
-export const TOKEN = {
-  OMDAPI: 'bf5769f2',
+export const environment = {
+  production: true,
+  OMDAPI: 'https://omdbapi.com',
+  OMDTOKEN: 'bf5769f2',
 };

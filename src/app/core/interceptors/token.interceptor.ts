@@ -6,7 +6,7 @@ import {
   HttpInterceptor,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TOKEN } from '../../../environments/environments';
+import { environment } from '../../../environments/environments';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -14,9 +14,9 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    if (request.url.indexOf('/api') === -1) return next.handle(request);
+    if (!request.url.includes(environment.OMDAPI)) return next.handle(request);
     const requestWithToken = request.clone({
-      params: request.params.set('apikey', TOKEN.OMDAPI),
+      params: request.params.set('apikey', environment.OMDTOKEN),
     });
     return next.handle(requestWithToken);
   }

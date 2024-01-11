@@ -1,0 +1,9 @@
+version: '1.0'
+services:
+  moviesearchengine:
+    build: .
+    container_name: moviesearchengine
+    ports:
+      - 80:8080
+    command: http-server dist/movie-search-engine
+

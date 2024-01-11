@@ -47,6 +47,12 @@
                   "maximumError": "4kb"
                 }
               ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environments.ts",
+                  "with": "src/environments/environments.prod.ts"
+                }
+              ],
               "outputHashing": "all"
             },
             "development": {
@@ -64,8 +70,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "movie-search-engine:build:production",
-              "proxyConfig": "proxy.conf.json"
+              "browserTarget": "movie-search-engine:build:production"
             },
             "development": {
               "browserTarget": "movie-search-engine:build:development",
