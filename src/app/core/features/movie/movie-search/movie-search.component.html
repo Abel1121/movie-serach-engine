@@ -10,14 +10,12 @@
     (newItemEvent)="openSettingsFunc()"
   ></app-search-bar>
     <div class="movie-settings" [ngClass]=" openSettings ? 'open' : 'close'">
-      <img class="movie-settings-arrow" src="assets/static/arrow.svg" alt="arrow">
-      <select class="search-select"
+      <app-selector
               [formGroup]="formModel.formGroup"
-              formControlName="{{formModel.TYPE}}"
-              >
-        <option></option>
-        <option *ngFor="let movieEnum of movieTypeEnum | keyvalue" value="{{movieEnum.value}}">{{("searchBar.") + movieEnum.value | translate}}</option>
-      </select>
+              [controlName]="formModel.TYPE"
+              [icon]="'assets/static/arrow.svg'"
+              [altIcon]="'arrow'"
+      ></app-selector>
       <app-search-bar
               class="search-bar"
               [placeholder]="'searchBar.year' | translate"

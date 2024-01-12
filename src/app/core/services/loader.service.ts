@@ -12,7 +12,7 @@ export class LoaderService {
     this.busyRequestCount++;
     setTimeout(() => {
       this.isLoading.next(true);
-    });
+    }, 0);
   }
 
   idle() {
@@ -21,7 +21,7 @@ export class LoaderService {
       this.busyRequestCount = 0;
       setTimeout(() => {
         this.isLoading.next(false);
-      });
+      }, 0);
     }
   }
 }

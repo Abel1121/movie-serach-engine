@@ -19,32 +19,6 @@
     transition: all 0.5s linear;
     overflow: hidden;
     position: relative;
-
-    &-arrow {
-      position: absolute;
-      transform: rotate(-90deg);
-      z-index: 1;
-      width: 3rem;
-      right: 1rem;
-      top: 0.4rem
-    }
-  }
-}
-.search {
-  &-select {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem 1.5rem;
-    align-items: flex-start;
-    border-radius: 0.75rem;
-    background-color: #1A1A1A;
-    border: 3px solid #1A1A1A;
-    color: $white2;
-    margin-bottom: 1rem;
-    appearance:none;
-    cursor: pointer;
-
   }
 }
 

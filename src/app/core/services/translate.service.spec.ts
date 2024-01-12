@@ -1,16 +1,24 @@
 import { TestBed } from '@angular/core/testing';
-
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateLocalService } from './translate.service';
 
-describe('TranslateService', () => {
-  let service: TranslateLocalService;
+describe('TranslateLocalService', () => {
+  let translateLocalService: TranslateLocalService;
+  let translateService: TranslateService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(TranslateLocalService);
+    TestBed.configureTestingModule({
+      providers: [TranslateLocalService],
+      imports: [TranslateModule.forRoot()],
+    });
+
+    translateLocalService = TestBed.inject(TranslateLocalService);
+    translateService = TestBed.inject(TranslateService);
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(translateLocalService).toBeTruthy();
   });
+
+  // for correct testing need to add library  ngx-translate-testing
 });

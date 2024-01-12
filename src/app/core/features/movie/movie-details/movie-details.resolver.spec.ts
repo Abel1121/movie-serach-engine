@@ -2,10 +2,13 @@ import { TestBed } from '@angular/core/testing';
 import { ResolveFn } from '@angular/router';
 
 import { movieDetailsResolver } from './movie-details.resolver';
+import { movieDetails } from '../../../../shared/models/movieDetails';
 
 describe('movieDetailsResolver', () => {
-  const executeResolver: ResolveFn<boolean> = (...resolverParameters) => 
-      TestBed.runInInjectionContext(() => movieDetailsResolver(...resolverParameters));
+  const executeResolver: ResolveFn<movieDetails> = (...resolverParameters) =>
+    TestBed.runInInjectionContext(() =>
+      movieDetailsResolver(...resolverParameters)
+    );
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

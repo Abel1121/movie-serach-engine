@@ -17,7 +17,7 @@ export class MovieListComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.subscribe((movieList) => {
       this.movieList = movieList['movieList'];
-      this.pages = Math.ceil(this.movieList.totalResults / 10);
+      this.pages = Math.ceil(Number(this.movieList.totalResults) / 10);
       this.currentPage = Number(
         this.activatedRoute.snapshot.queryParamMap.get('page')
       );
