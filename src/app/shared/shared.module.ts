@@ -30,6 +30,7 @@ import { PosterComponent } from './components/poster/poster.component';
     CheckTypePipe,
     PaginationComponent,
     PosterComponent,
+    SelectorComponent,
   ],
   imports: [
     CommonModule,
