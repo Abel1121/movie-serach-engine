@@ -7,13 +7,11 @@ import {
 } from '@angular/common/http/testing';
 import { LoaderService } from '../services/loader.service';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
-import { MovieService } from '../services/movie.service';
 
 describe('TokenInterceptor', () => {
   let tokenInterceptor: TokenInterceptor;
   let client: HttpClient;
   let httpMock: HttpTestingController;
-  let movieService: MovieService;
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
@@ -32,7 +30,6 @@ describe('TokenInterceptor', () => {
     tokenInterceptor = TestBed.inject(TokenInterceptor);
     client = TestBed.inject(HttpClient);
     httpMock = TestBed.inject(HttpTestingController);
-    movieService = TestBed.inject(MovieService);
   });
 
   it('should be created', () => {
