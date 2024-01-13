@@ -22,9 +22,10 @@ export interface movieDetails {
   imdbVotes: string;
   imdbID: string;
   Type: movieTypeEnum;
-  DVD: string;
-  BoxOffice: string;
-  Production: string;
-  Website: string;
+  DVD?: string;
+  BoxOffice?: string;
+  Production?: string;
+  Website?: string;
   Response: string;
+  totalSeasons?: string;
 }

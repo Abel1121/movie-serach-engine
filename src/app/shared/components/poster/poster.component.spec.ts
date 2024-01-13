@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PosterComponent } from './poster.component';
+import { NgOptimizedImage } from '@angular/common';
 
 describe('PosterComponent', () => {
   let component: PosterComponent;
@@ -8,10 +9,12 @@ describe('PosterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PosterComponent]
+      declarations: [PosterComponent],
+      imports: [NgOptimizedImage],
     });
     fixture = TestBed.createComponent(PosterComponent);
     component = fixture.componentInstance;
+    component.poster = 'somePosterUrl';
     fixture.detectChanges();
   });
 

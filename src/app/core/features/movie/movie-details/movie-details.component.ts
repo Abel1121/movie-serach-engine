@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { movieDetails } from '../../../../shared/models/movieDetails';
 import { MovieService } from '../../../services/movie.service';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-movie-details',
@@ -17,7 +16,6 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private movieService: MovieService,
-    private location: Location,
     private router: Router
   ) {
     this.previousUrl = this.router
@@ -31,10 +29,12 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
     this.lastSeen = this.movieService.lastSeen;
   }
   ngOnDestroy() {
-    this.movieService.lastSeen.push(this.movieDetails.Poster);
-    if (this.movieService.lastSeen.length >= 6)
-      this.movieService.lastSeen.shift();
-    localStorage.setItem('lastSeen', this.movieService.lastSeen.toString());
+    if (this.movieDetails) {
+      this.movieService.lastSeen.push(this.movieDetails.Poster);
+      if (this.movieService.lastSeen.length >= 6)
+        this.movieService.lastSeen.shift();
+      localStorage.setItem('lastSeen', this.movieService.lastSeen.toString());
+    }
   }
 
   changeRotation() {
