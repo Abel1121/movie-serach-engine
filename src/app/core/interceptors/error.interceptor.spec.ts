@@ -63,6 +63,8 @@ describe('ErrorInterceptor', () => {
   });
 
   it('should not log error responses', async () => {
+    const consoleSpy = spyOn(console, 'error');
+
     const httpResponse = new HttpResponse({
       status: 200,
       statusText: 'OK',
@@ -73,7 +75,7 @@ describe('ErrorInterceptor', () => {
     try {
       const response = await httpReqPromise;
       expect(response).toEqual(httpResponse);
-      expect(console.error).not.toHaveBeenCalled();
+      expect(consoleSpy).not.toHaveBeenCalled();
     } catch (error) {
       fail('It should have not thrown');
     }

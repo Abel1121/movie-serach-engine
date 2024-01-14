@@ -9,7 +9,6 @@ import { movieTypeEnum } from '../../../../shared/enum/movie-type';
   styleUrls: ['./movie-search.component.scss'],
 })
 export class MovieSearchComponent implements OnInit {
-  //todo selector move to separate component
   formModel = new MovieSearchFormModel();
   openSettings = false;
   movieTypeEnum = movieTypeEnum;

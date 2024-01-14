@@ -1,8 +1,10 @@
-<img class="selector-arrow" src="{{icon}}" alt="{{altIcon}}">
-<select class="selector-search"
-        [formGroup]="formGroup"
-        formControlName="{{controlName}}"
->
-    <option></option>
-    <option *ngFor="let movieEnum of movieTypeEnum | keyvalue" value="{{movieEnum.value}}">{{("searchBar.") + movieEnum.value | translate}}</option>
-</select>
+<div [formGroup]="formGroup">
+    <img class="selector-arrow" src="{{icon}}" alt="{{altIcon}}">
+    <select class="selector-search"
+            [formGroup]="formGroup"
+            [formControlName]="controlName"
+    >
+        <option></option>
+        <option *ngFor="let movieEnum of movieTypeEnum | keyvalue" value="{{movieEnum.value}}">{{("searchBar.") + movieEnum.value | translate}}</option>
+    </select>
+</div>
