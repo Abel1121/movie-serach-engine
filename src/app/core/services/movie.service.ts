@@ -2,17 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environments';
 import { movieList } from '../../shared/models/movieList';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { movieDetails } from '../../shared/models/movieDetails';
 import { Params } from '@angular/router';
+import { lastSeen } from '../../shared/models/lastSeen';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MovieService {
   constructor(private http: HttpClient) {}
-  movieList = new Subject<movieList>();
-  lastSeen: string[] = [];
+  lastSeens: lastSeen[] = [];
 
   getMovieList(param: Params) {
     let params = new HttpParams().set('s', param['title']);

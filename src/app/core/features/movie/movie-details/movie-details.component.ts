@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { movieDetails } from '../../../../shared/models/movieDetails';
 import { MovieService } from '../../../services/movie.service';
+import { lastSeen } from '../../../../shared/models/lastSeen';
 
 @Component({
   selector: 'app-movie-details',
@@ -10,7 +11,7 @@ import { MovieService } from '../../../services/movie.service';
 })
 export class MovieDetailsComponent implements OnInit, OnDestroy {
   movieDetails!: movieDetails;
-  lastSeen: string[] = [];
+  lastSeens: lastSeen[] = [];
   iconPosition = 'close';
   previousUrl: string | undefined;
   constructor(
@@ -26,14 +27,28 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
     this.activatedRoute.data.subscribe((movieDetails) => {
       this.movieDetails = movieDetails['movieDetails'];
     });
-    this.lastSeen = this.movieService.lastSeen;
+    this.lastSeens = this.movieService.lastSeens;
   }
   ngOnDestroy() {
     if (this.movieDetails) {
-      this.movieService.lastSeen.push(this.movieDetails.Poster);
-      if (this.movieService.lastSeen.length >= 6)
-        this.movieService.lastSeen.shift();
-      localStorage.setItem('lastSeen', this.movieService.lastSeen.toString());
+      if (this.movieService.lastSeens.length)
+        this.movieService.lastSeens = this.movieService.lastSeens.filter(
+          (item) => item?.title !== this.movieDetails?.Title
+        );
+      this.movieService.lastSeens.push({
+        poster: this.movieDetails.Poster,
+        title: this.movieDetails.Title,
+        imdbID: this.movieDetails.imdbID,
+      });
+
+      if (this.movieService.lastSeens.length >= 6)
+        this.movieService.lastSeens.shift();
+      localStorage.setItem(
+        'lastSeen',
+        this.movieService.lastSeens
+          .map((item) => JSON.stringify(item))
+          .toString()
+      );
     }
   }
 

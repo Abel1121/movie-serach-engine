@@ -5,7 +5,7 @@
     (click)="back()">
   </app-button>
   <app-button
-          *ngIf="lastSeen.length"
+          *ngIf="lastSeens.length"
     [buttonText]="'movieDetails.lastMovie' | translate"
     [icon]="'assets/static/arrow.svg'"
     [iconPosition]="iconPosition"
@@ -14,12 +14,15 @@
   </app-button>
 </div>
 <ul class="movie-lastSeen {{iconPosition}}">
-  <li *ngFor="let poster of lastSeen">
-    <app-poster
-            class="movie-lastSeen-image"
-            [showPoster]="iconPosition"
-            [poster]="poster"
-    ></app-poster>
+  <li *ngFor="let lastSeen of lastSeens">
+    <a [href]="'movie/' + lastSeen.imdbID">
+      <app-poster
+              class="movie-lastSeen-image"
+              [showPoster]="iconPosition"
+              [poster]="lastSeen.poster"
+              [title]="lastSeen.title"
+      ></app-poster>
+    </a>
   </li>
 </ul>
 <app-poster
