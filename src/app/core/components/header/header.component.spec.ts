@@ -50,4 +50,9 @@ describe('HeaderComponent', () => {
     fixture.nativeElement.querySelector('button').click();
     expect(spyButton).toHaveBeenCalled();
   });
+  it('should emit translate.changeLang if run changeLanguage func', () => {
+    const spyChangeLang = spyOn(translateLocalService, 'changeLang');
+    component.changeLanguage();
+    expect(spyChangeLang).toHaveBeenCalled();
+  });
 });
