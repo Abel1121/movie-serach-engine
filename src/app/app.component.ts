@@ -20,8 +20,12 @@ export class AppComponent {
     }
     translate.use(localStorage.getItem('language') || 'pl');
     if (localStorage.getItem('lastSeen') !== null) {
-      movieService.lastSeen =
-        localStorage.getItem('lastSeen')?.split(',') || [];
+      movieService.lastSeens =
+        localStorage
+          .getItem('lastSeen')
+          ?.split('},')
+          ?.map((item) => JSON?.parse((item + '}')?.replaceAll('}}', '}'))) ||
+        [];
     }
   }
   title = 'movie-search-engine';
