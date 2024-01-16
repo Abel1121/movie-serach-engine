@@ -8,7 +8,7 @@ describe('SpinnerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SpinnerComponent]
+      declarations: [SpinnerComponent],
     });
     fixture = TestBed.createComponent(SpinnerComponent);
     component = fixture.componentInstance;
@@ -17,5 +17,11 @@ describe('SpinnerComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render div with class spinner', () => {
+    expect(
+      fixture.nativeElement.querySelector('div').getAttribute('class')
+    ).toBe('spinner');
   });
 });

@@ -27,4 +27,16 @@ describe('SelectorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have 3 selectors', () => {
+    expect(fixture.nativeElement.querySelectorAll('option').length).toBe(4);
+  });
+
+  it('should render image', () => {
+    expect(fixture.nativeElement.querySelectorAll('img')).toBeDefined();
+  });
+
+  it('should render select', () => {
+    expect(fixture.nativeElement.querySelectorAll('select')).toBeDefined();
+  });
 });
