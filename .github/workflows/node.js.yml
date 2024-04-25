@@ -37,4 +37,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: ./package-lock.json
+    - run: npm install -g @angular/cli@latest
     - run: npm run test
