@@ -34,5 +34,7 @@ jobs:
     - name: Run unit tests
       uses: actions/setup-node@v3
       with:
-       node-version: ${{ matrix.node-version }}
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: ./package-lock.json
     - run: npm run test
