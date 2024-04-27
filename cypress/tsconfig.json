@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "outDir": "../../dist/out-tsc",
+    "allowJs": true,
+    "types": ["cypress", "node"]
+  },
+  "include": ["**/*.ts", "**/*.js", "cypress.config.ts"]
+}
