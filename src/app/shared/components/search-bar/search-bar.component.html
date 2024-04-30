@@ -1,9 +1,9 @@
 <form class="form" [formGroup]="formGroup">
   <h1 *ngIf="title" class="form-title">{{title}}</h1>
-  <label for="search"></label>
+  <label for="{{controlName}}"></label>
   <div class="form-container">
     <input
-      id="search"
+      id="{{controlName}}"
       formControlName="{{controlName}}"
       name="movie-search"
       class="form-input {{inputClass}}"
