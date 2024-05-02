@@ -39,3 +39,14 @@ jobs:
         cache-dependency-path: ./package-lock.json
     - run: npm install
     - run: npm run test:prod
+  e2e-tests:
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        run: npm install
+      - name: Run e2e tests
+        uses: cypress-io/github-action@v6
+        with:
+          run: npm run e2e-run:prod
