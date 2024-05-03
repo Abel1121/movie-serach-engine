@@ -15,6 +15,5 @@
 #TO DO
 - add CI/CD
 - add NgRx
-- add cypress
 - add update angular to 17
 - add signals and signals store
