@@ -9,7 +9,7 @@
     "test": "ng test --no-watch --code-coverage",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "e2e-run": "cypress run",
-    "e2e-run:prod": "npm start & wait-on http://localhost:4200 cypress run",
+    "e2e-run:prod": "npm run start & wait-on http://localhost:4200 cypress run",
     "e2e-write": "cypress open --e2e --browser electron "
   },
   "private": true,
