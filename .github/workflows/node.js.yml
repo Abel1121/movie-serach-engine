@@ -49,4 +49,5 @@ jobs:
       - name: Run e2e tests
         uses: cypress-io/github-action@v6
         with:
-          run: npm run e2e-run:prod
+          run: npm run start
+          test: npm run e2e-run
