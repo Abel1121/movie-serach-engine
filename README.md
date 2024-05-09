@@ -13,7 +13,6 @@
 - **docker compose up** for build and run docker
 
 #TO DO
-- add CI/CD
 - add NgRx
 - add update angular to 17
 - add signals and signals store
