@@ -7,7 +7,7 @@ import { movieDetails } from '../../../../shared/models/movieDetails';
 describe('movieDetailsResolver', () => {
   const executeResolver: ResolveFn<movieDetails> = (...resolverParameters) =>
     TestBed.runInInjectionContext(() =>
-      movieDetailsResolver(...resolverParameters)
+      movieDetailsResolver(...resolverParameters),
     );
 
   beforeEach(() => {

@@ -35,7 +35,7 @@ describe('PageNotFoundComponent', () => {
 
   it('should h1 have a text', () => {
     expect(fixture.nativeElement.querySelector('h1').innerText).toBe(
-      'error.404'
+      'error.404',
     );
   });
 
@@ -45,7 +45,7 @@ describe('PageNotFoundComponent', () => {
 
   it('should h2 have a text', () => {
     expect(fixture.nativeElement.querySelector('h2').innerText).toBe(
-      'error.redirect'
+      'error.redirect',
     );
   });
 

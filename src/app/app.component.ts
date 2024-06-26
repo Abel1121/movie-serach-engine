@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(
     private translate: TranslateService,
     private movieService: MovieService,
-    public loaderService: LoaderService
+    public loaderService: LoaderService,
   ) {
     translate.setDefaultLang('pl');
     translate.addLangs(['pl', 'en']);

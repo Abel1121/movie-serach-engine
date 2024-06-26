@@ -5,7 +5,7 @@ name: Build project
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: ./package-lock.json
       - run: npm install
       - run: npm run build
@@ -30,15 +30,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - uses: actions/checkout@v3
-    - name: Run unit tests
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: ./package-lock.json
-    - run: npm install
-    - run: npm run test:prod
+      - uses: actions/checkout@v3
+      - name: Run unit tests
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: ./package-lock.json
+      - run: npm install
+      - run: npm run test:prod
   e2e-tests:
     runs-on: ubuntu-latest
     needs: unit-tests
@@ -50,6 +50,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npm run start
-          wait-on: 'http://localhost:4200'
+          wait-on: "http://localhost:4200"
           wait-on-timeout: 120
           test: npm run e2e-run

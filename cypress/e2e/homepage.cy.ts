@@ -10,12 +10,12 @@ describe('homepage pl', () => {
     cy.get('.header > app-button > .button').should('contain', 'Angielski');
     cy.get('.form-title').should(
       'contain',
-      'Najnowsze filmy i produkcje - Wyszukaj swoje ulubione filmy'
+      'Najnowsze filmy i produkcje - Wyszukaj swoje ulubione filmy',
     );
     cy.get('#title').should(
       'have.attr',
       'placeholder',
-      'Napisz tutaj czego poszukujesz'
+      'Napisz tutaj czego poszukujesz',
     );
     cy.get('#year').should('have.attr', 'placeholder', 'Rok');
     cy.get('app-button.pink > .button').should('contain', 'Wyszukaj');
@@ -32,12 +32,12 @@ describe('homepage pl', () => {
     cy.get('.header > app-button > .button').should('contain', 'Polish');
     cy.get('.form-title').should(
       'contain',
-      'Latest Movies and Productions - Search for Your Favorite Films'
+      'Latest Movies and Productions - Search for Your Favorite Films',
     );
     cy.get('#title').should(
       'have.attr',
       'placeholder',
-      'Write here what you need'
+      'Write here what you need',
     );
     cy.get('#year').should('have.attr', 'placeholder', 'Year');
     cy.get('app-button.pink > .button').should('contain', 'Search');

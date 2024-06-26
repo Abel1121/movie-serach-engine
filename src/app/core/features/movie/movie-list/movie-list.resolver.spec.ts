@@ -7,7 +7,7 @@ import { movieList } from '../../../../shared/models/movieList';
 describe('movieListResolver', () => {
   const executeResolver: ResolveFn<movieList | []> = (...resolverParameters) =>
     TestBed.runInInjectionContext(() =>
-      movieListResolver(...resolverParameters)
+      movieListResolver(...resolverParameters),
     );
 
   beforeEach(() => {

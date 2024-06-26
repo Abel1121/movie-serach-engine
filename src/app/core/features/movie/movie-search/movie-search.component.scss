@@ -1,5 +1,5 @@
-@import '../../../../shared/styles/colors';
-@import '../../../../shared/styles/variable';
+@import "../../../../shared/styles/colors";
+@import "../../../../shared/styles/variable";
 
 :host {
   display: flex;
@@ -25,7 +25,6 @@
 .open {
   max-height: 9rem;
   transition: all 0.5s linear;
-
 }
 .close {
   max-height: 0;

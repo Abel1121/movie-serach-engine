@@ -1,4 +1,4 @@
-@import '../../../shared/styles/colors';
+@import "../../../shared/styles/colors";
 
 :host {
   display: flex;
@@ -17,11 +17,10 @@
     width: 2.5rem;
     height: 1.5rem;
     border-radius: 0.75rem;
-    background-color: #1A1A1A;
-    border: 3px solid #1A1A1A;
+    background-color: #1a1a1a;
+    border: 3px solid #1a1a1a;
     color: $white;
     box-sizing: border-box;
-
   }
   &-currentPage {
     display: flex;
@@ -31,7 +30,7 @@
     box-sizing: border-box;
     width: 2rem;
     height: 2rem;
-    background-color: #1A1A1A;
+    background-color: #1a1a1a;
   }
 
   &-item {

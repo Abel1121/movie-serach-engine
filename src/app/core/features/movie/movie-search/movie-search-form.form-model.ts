@@ -19,10 +19,10 @@ export class MovieSearchFormModel {
     const controls = {
       [this.TITLE]: new FormControl<string>(
         form?.['title'] ?? null,
-        Validators.required
+        Validators.required,
       ),
       [this.TYPE]: new FormControl<movieTypeEnum | null>(
-        form?.['type'] ?? null
+        form?.['type'] ?? null,
       ),
       [this.YEAR]: new FormControl<string | null>(form?.['year'] ?? null),
       [this.PAGE]: new FormControl<string | null>(form?.['page'] ?? null),

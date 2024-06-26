@@ -14,14 +14,14 @@ export class LoaderInterceptor implements HttpInterceptor {
 
   intercept(
     request: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     this.loaderService.busy();
 
     return next.handle(request).pipe(
       finalize(() => {
         this.loaderService.idle();
-      })
+      }),
     );
   }
 }

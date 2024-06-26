@@ -30,10 +30,10 @@ describe('PosterComponent', () => {
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('span')).toBeDefined();
     expect(fixture.nativeElement.querySelector('span').innerText).toBe(
-      'poster.noPoster'
+      'poster.noPoster',
     );
     expect(
-      fixture.nativeElement.querySelector('span').getAttribute('class')
+      fixture.nativeElement.querySelector('span').getAttribute('class'),
     ).toBe(showPoster);
   });
 
@@ -45,16 +45,16 @@ describe('PosterComponent', () => {
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('img')).toBeDefined();
     expect(
-      fixture.nativeElement.querySelector('img').getAttribute('class')
+      fixture.nativeElement.querySelector('img').getAttribute('class'),
     ).toBe(`movie-image ${showPoster}`);
     expect(fixture.nativeElement.querySelector('img').getAttribute('src')).toBe(
-      `somePosterUrl`
+      `somePosterUrl`,
     );
     expect(fixture.nativeElement.querySelector('img').getAttribute('alt')).toBe(
-      `${title} poster`
+      `${title} poster`,
     );
     expect(
-      fixture.nativeElement.querySelector('img').getAttribute('title')
+      fixture.nativeElement.querySelector('img').getAttribute('title'),
     ).toBe(title);
   });
 });

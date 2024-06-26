@@ -12,7 +12,10 @@ export class MovieSearchComponent implements OnInit {
   formModel = new MovieSearchFormModel();
   openSettings = false;
   movieTypeEnum = movieTypeEnum;
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {}
   ngOnInit() {
     this.formModel = new MovieSearchFormModel(this.route.snapshot?.queryParams);
   }
