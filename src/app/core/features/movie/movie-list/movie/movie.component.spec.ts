@@ -36,19 +36,19 @@ describe('MovieComponent', () => {
 
   it('should show movie data on screen', () => {
     expect(
-      fixture.nativeElement.querySelector('.movie-description-title').innerText
+      fixture.nativeElement.querySelector('.movie-description-title').innerText,
     ).toBe(`movie.title: ${movie.Title}`);
     expect(
-      fixture.nativeElement.querySelector('.movie-description-type').innerText
+      fixture.nativeElement.querySelector('.movie-description-type').innerText,
     ).toBe(`movie.type: searchBar.${movie.Type}`);
     expect(
-      fixture.nativeElement.querySelector('.movie-description-year').innerText
+      fixture.nativeElement.querySelector('.movie-description-year').innerText,
     ).toBe(`movie.year: ${movie.Year}`);
     expect(fixture.nativeElement.querySelector('img').getAttribute('src')).toBe(
-      movie.Poster
+      movie.Poster,
     );
     expect(fixture.nativeElement.querySelector('img').getAttribute('alt')).toBe(
-      `${movie.Title} poster`
+      `${movie.Title} poster`,
     );
   });
 });

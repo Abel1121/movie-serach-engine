@@ -44,20 +44,20 @@ describe('ButtonComponent', () => {
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('img')).toBeDefined();
     expect(
-      fixture.nativeElement.querySelector('img').getAttribute('src')
+      fixture.nativeElement.querySelector('img').getAttribute('src'),
     ).toEqual('some value');
     expect(
-      fixture.nativeElement.querySelector('img').getAttribute('alt')
+      fixture.nativeElement.querySelector('img').getAttribute('alt'),
     ).toEqual('altIcon');
     expect(
-      fixture.nativeElement.querySelector('img').getAttribute('class')
+      fixture.nativeElement.querySelector('img').getAttribute('class'),
     ).toContain('reverse');
   });
   it('should render text if buttonText have value', () => {
     component.buttonText = 'some button text';
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('button').innerText).toBe(
-      'some button text'
+      'some button text',
     );
   });
   it('shouldn`t render text if buttonText haven`t value', () => {

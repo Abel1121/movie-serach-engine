@@ -24,7 +24,7 @@ export class PaginationComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
   ) {
     this.pageForm = new FormGroup({
       page: new FormControl(),

@@ -29,19 +29,19 @@ describe('HeaderComponent', () => {
 
   it('should title have a text', () => {
     expect(fixture.nativeElement.querySelector('title').innerText).toBe(
-      'header.title'
+      'header.title',
     );
   });
 
   it('should button have a text', () => {
     expect(fixture.nativeElement.querySelector('button').innerText).toBe(
-      'header.language'
+      'header.language',
     );
   });
 
   it('should "a" html tag have href props to main page', () => {
     expect(fixture.nativeElement.querySelector('a').getAttribute('href')).toBe(
-      '/'
+      '/',
     );
   });
 

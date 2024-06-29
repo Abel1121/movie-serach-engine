@@ -1,6 +1,10 @@
-<button [disabled]="disabled" class="button {{class}}">
-  <i *ngIf="icon" >
-    <img class="button-icon {{iconPosition}}" src="{{icon}}" alt="{{altIcon}}">
+<button [disabled]="disabled" class="button {{ class }}">
+  <i *ngIf="icon">
+    <img
+      class="button-icon {{ iconPosition }}"
+      src="{{ icon }}"
+      alt="{{ altIcon }}"
+    />
   </i>
-  {{buttonText}}
+  {{ buttonText }}
 </button>

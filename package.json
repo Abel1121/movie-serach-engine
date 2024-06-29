@@ -10,8 +10,9 @@
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "e2e-run": "cypress run",
     "e2e-run:prod": "npm run start & wait-on http://localhost:4200 cypress run",
-    "e2e-write": "cypress open --e2e --browser electron "
-
+    "e2e-write": "cypress open --e2e --browser electron",
+    "prettier:check": "prettier . --check",
+    "prettier:write": "prettier . --write"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,7 @@
     "@angular/router": "^16.2.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "prettier": "^3.3.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

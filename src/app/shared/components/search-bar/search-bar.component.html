@@ -1,16 +1,21 @@
 <form class="form" [formGroup]="formGroup">
-  <h1 *ngIf="title" class="form-title">{{title}}</h1>
-  <label for="{{controlName}}"></label>
+  <h1 *ngIf="title" class="form-title">{{ title }}</h1>
+  <label for="{{ controlName }}"></label>
   <div class="form-container">
     <input
-      id="{{controlName}}"
-      formControlName="{{controlName}}"
+      id="{{ controlName }}"
+      formControlName="{{ controlName }}"
       name="movie-search"
-      class="form-input {{inputClass}}"
-      placeholder="{{placeholder}}"
-    >
-    <i *ngIf="icon" >
-      <img (click)="clickIcon('click')" class="form-icon {{icon}}" src="{{icon}}" alt="{{altIcon}}">
+      class="form-input {{ inputClass }}"
+      placeholder="{{ placeholder }}"
+    />
+    <i *ngIf="icon">
+      <img
+        (click)="clickIcon('click')"
+        class="form-icon {{ icon }}"
+        src="{{ icon }}"
+        alt="{{ altIcon }}"
+      />
     </i>
   </div>
 </form>

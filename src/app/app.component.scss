@@ -1,4 +1,4 @@
-@import './shared/styles/colors';
+@import "./shared/styles/colors";
 
 * {
   box-sizing: border-box;
@@ -16,7 +16,7 @@
 
   &-spinner {
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
   }
 }

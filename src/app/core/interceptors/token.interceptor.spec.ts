@@ -40,7 +40,7 @@ describe('TokenInterceptor', () => {
     client.get('http://localhost:4200/api').subscribe();
 
     const request = httpMock.expectOne(
-      `http://localhost:4200/api?apikey=bf5769f2`
+      `http://localhost:4200/api?apikey=bf5769f2`,
     );
     expect(request.request.method).toBe('GET');
   });

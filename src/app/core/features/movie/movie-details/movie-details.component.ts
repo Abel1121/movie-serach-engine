@@ -17,7 +17,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private movieService: MovieService,
-    private router: Router
+    private router: Router,
   ) {
     this.previousUrl = this.router
       ?.getCurrentNavigation()
@@ -33,7 +33,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
     if (this.movieDetails) {
       if (this.movieService.lastSeens.length)
         this.movieService.lastSeens = this.movieService.lastSeens.filter(
-          (item) => item?.title !== this.movieDetails?.Title
+          (item) => item?.title !== this.movieDetails?.Title,
         );
       this.movieService.lastSeens.push({
         poster: this.movieDetails.Poster,
@@ -47,7 +47,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
         'lastSeen',
         this.movieService.lastSeens
           .map((item) => JSON.stringify(item))
-          .toString()
+          .toString(),
       );
     }
   }
@@ -58,7 +58,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
 
   back() {
     this.router.navigateByUrl(
-      typeof this.previousUrl === 'undefined' ? '/' : this.previousUrl
+      typeof this.previousUrl === 'undefined' ? '/' : this.previousUrl,
     );
   }
 }

@@ -1,4 +1,8 @@
-<form class="move-search" [formGroup]="formModel.formGroup" (ngSubmit)="onSave()">
+<form
+  class="move-search"
+  [formGroup]="formModel.formGroup"
+  (ngSubmit)="onSave()"
+>
   <app-search-bar
     class="search-bar"
     [title]="'searchBar.title' | translate"
@@ -9,20 +13,20 @@
     [altIcon]="'settings'"
     (newItemEvent)="openSettingsFunc()"
   ></app-search-bar>
-    <div class="movie-settings" [ngClass]=" openSettings ? 'open' : 'close'">
-      <app-selector
-              [formGroup]="formModel.formGroup"
-              [controlName]="formModel.TYPE"
-              [icon]="'assets/static/arrow.svg'"
-              [altIcon]="'arrow'"
-      ></app-selector>
-      <app-search-bar
-              class="search-bar"
-              [placeholder]="'searchBar.year' | translate"
-              [formGroup]="formModel.formGroup"
-              [controlName]="formModel.YEAR"
-      ></app-search-bar>
-    </div>
+  <div class="movie-settings" [ngClass]="openSettings ? 'open' : 'close'">
+    <app-selector
+      [formGroup]="formModel.formGroup"
+      [controlName]="formModel.TYPE"
+      [icon]="'assets/static/arrow.svg'"
+      [altIcon]="'arrow'"
+    ></app-selector>
+    <app-search-bar
+      class="search-bar"
+      [placeholder]="'searchBar.year' | translate"
+      [formGroup]="formModel.formGroup"
+      [controlName]="formModel.YEAR"
+    ></app-search-bar>
+  </div>
   <app-button
     class="pink"
     [disabled]="!formModel.formGroup.valid"

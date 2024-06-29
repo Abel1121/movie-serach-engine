@@ -19,7 +19,7 @@ export class MovieListComponent implements OnInit {
       this.movieList = movieList['movieList'];
       this.pages = Math.ceil(Number(this.movieList.totalResults) / 10);
       this.currentPage = Number(
-        this.activatedRoute.snapshot.queryParamMap.get('page')
+        this.activatedRoute.snapshot.queryParamMap.get('page'),
       );
     });
   }

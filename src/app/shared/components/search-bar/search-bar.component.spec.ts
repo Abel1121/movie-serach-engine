@@ -52,13 +52,13 @@ describe('SearchBarComponent', () => {
     expect(fixture.nativeElement.querySelector('i')).toBeDefined();
     expect(fixture.nativeElement.querySelector('img')).toBeDefined();
     expect(
-      fixture.nativeElement.querySelector('img').getAttribute('class')
+      fixture.nativeElement.querySelector('img').getAttribute('class'),
     ).toBe(`form-icon ${icon}`);
     expect(fixture.nativeElement.querySelector('img').getAttribute('src')).toBe(
-      icon
+      icon,
     );
     expect(fixture.nativeElement.querySelector('img').getAttribute('alt')).toBe(
-      altIcon
+      altIcon,
     );
   });
   it('should render label', () => {
@@ -76,13 +76,13 @@ describe('SearchBarComponent', () => {
     expect(
       fixture.nativeElement
         .querySelector('input')
-        .getAttribute('ng-reflect-name')
+        .getAttribute('ng-reflect-name'),
     ).toBe(controlName);
     expect(
-      fixture.nativeElement.querySelector('input').getAttribute('class')
+      fixture.nativeElement.querySelector('input').getAttribute('class'),
     ).toBe(`form-input ng-untouched ng-pristine ng-valid ${inputClass}`);
     expect(
-      fixture.nativeElement.querySelector('input').getAttribute('placeHolder')
+      fixture.nativeElement.querySelector('input').getAttribute('placeHolder'),
     ).toBe(placeholder);
   });
 });

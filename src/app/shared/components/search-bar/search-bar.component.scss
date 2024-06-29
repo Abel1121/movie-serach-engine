@@ -1,4 +1,4 @@
-@import '../../../shared/styles/colors';
+@import "../../../shared/styles/colors";
 
 :host {
   display: flex;
@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.form{
+.form {
   width: 100%;
 
   &-title {
@@ -37,7 +37,7 @@
       background-color: $black3;
     }
   }
-  &-container{
+  &-container {
     position: relative;
   }
   &-icon {

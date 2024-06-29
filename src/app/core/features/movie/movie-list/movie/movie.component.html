@@ -1,11 +1,17 @@
 <app-poster
-        class="movie-image"
-    [poster]="movie.Poster"
-    [title]="movie.Title"
+  class="movie-image"
+  [poster]="movie.Poster"
+  [title]="movie.Title"
 ></app-poster>
 <div class="movie-description">
-    <h3 class="movie-description-title">{{'movie.title' | translate}}: {{movie.Title}}</h3>
-    <span class="movie-description-type">{{'movie.type' | translate}}: {{("searchBar.") + movie.Type | translate}}</span>
-    <span class="movie-description-year">{{'movie.year' | translate}}: {{movie.Year}}</span>
+  <h3 class="movie-description-title">
+    {{ "movie.title" | translate }}: {{ movie.Title }}
+  </h3>
+  <span class="movie-description-type"
+    >{{ "movie.type" | translate }}:
+    {{ "searchBar." + movie.Type | translate }}</span
+  >
+  <span class="movie-description-year"
+    >{{ "movie.year" | translate }}: {{ movie.Year }}</span
+  >
 </div>
-

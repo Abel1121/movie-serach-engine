@@ -2,10 +2,11 @@
   <app-button
     [buttonText]="'movieDetails.back' | translate"
     [icon]="'assets/static/arrow.svg'"
-    (click)="back()">
+    (click)="back()"
+  >
   </app-button>
   <app-button
-          *ngIf="lastSeens.length"
+    *ngIf="lastSeens.length"
     [buttonText]="'movieDetails.lastMovie' | translate"
     [icon]="'assets/static/arrow.svg'"
     [iconPosition]="iconPosition"
@@ -13,33 +14,35 @@
   >
   </app-button>
 </div>
-<ul class="movie-lastSeen {{iconPosition}}">
+<ul class="movie-lastSeen {{ iconPosition }}">
   <li *ngFor="let lastSeen of lastSeens">
     <a [href]="'movie/' + lastSeen.imdbID">
       <app-poster
-              class="movie-lastSeen-image"
-              [showPoster]="iconPosition"
-              [poster]="lastSeen.poster"
-              [title]="lastSeen.title"
+        class="movie-lastSeen-image"
+        [showPoster]="iconPosition"
+        [poster]="lastSeen.poster"
+        [title]="lastSeen.title"
       ></app-poster>
     </a>
   </li>
 </ul>
 <app-poster
-        class="movie-image"
+  class="movie-image"
   [poster]="movieDetails.Poster"
   [title]="movieDetails.Title"
 ></app-poster>
 <div class="movie-details">
-  <span class="movie-span" *ngFor="let details of movieDetails | printJsonPretty">
-    <ng-container *ngIf="(details.value | checkType) === 'object' else string">
-      {{details.key}}:
+  <span
+    class="movie-span"
+    *ngFor="let details of movieDetails | printJsonPretty"
+  >
+    <ng-container *ngIf="(details.value | checkType) === 'object'; else string">
+      {{ details.key }}:
       <ng-container *ngFor="let detail of details.value">
-        <br> {{detail.Source}} - {{detail.Value}}
+        <br />
+        {{ detail.Source }} - {{ detail.Value }}
       </ng-container>
     </ng-container>
-    <ng-template #string>
-      {{details.key}}: {{details.value}}
-    </ng-template>
+    <ng-template #string> {{ details.key }}: {{ details.value }} </ng-template>
   </span>
 </div>

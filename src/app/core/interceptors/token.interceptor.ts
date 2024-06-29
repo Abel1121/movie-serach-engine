@@ -12,7 +12,7 @@ import { environment } from '../../../environments/environments';
 export class TokenInterceptor implements HttpInterceptor {
   intercept(
     request: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     if (!request.url.includes(environment.OMDAPI)) return next.handle(request);
     const requestWithToken = request.clone({

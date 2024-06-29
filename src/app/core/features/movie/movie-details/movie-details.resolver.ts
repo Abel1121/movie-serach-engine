@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 export const movieDetailsResolver: ResolveFn<movieDetails> = (
   route,
-  state
+  state,
 ): Observable<movieDetails> => {
   return inject(MovieService).getMovieDetails(route?.paramMap?.get('imdbId')!);
 };

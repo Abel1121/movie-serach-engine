@@ -21,7 +21,7 @@ describe('SpinnerComponent', () => {
 
   it('should render div with class spinner', () => {
     expect(
-      fixture.nativeElement.querySelector('div').getAttribute('class')
+      fixture.nativeElement.querySelector('div').getAttribute('class'),
     ).toBe('spinner');
   });
 });

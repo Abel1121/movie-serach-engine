@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 export const movieListResolver: ResolveFn<movieList | []> = (
   route,
-  state
+  state,
 ): Observable<movieList> | [] => {
   if (route.queryParams['title']) {
     return inject(MovieService).getMovieList(route?.queryParams);

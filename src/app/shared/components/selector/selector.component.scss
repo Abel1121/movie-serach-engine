@@ -1,13 +1,13 @@
-@import '../../../shared/styles/colors';
+@import "../../../shared/styles/colors";
 
-.selector{
+.selector {
   &-arrow {
     position: absolute;
     transform: rotate(-90deg);
     z-index: 1;
     width: 3rem;
     right: 1rem;
-    top: 0.4rem
+    top: 0.4rem;
   }
   &-search {
     display: flex;
@@ -20,7 +20,7 @@
     border: 3px solid $black2;
     color: $white2;
     margin-bottom: 1rem;
-    appearance:none;
+    appearance: none;
     cursor: pointer;
   }
 }
